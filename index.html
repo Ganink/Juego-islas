@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+	<meta charset="utf-8">
+	<title>jQuery UI Example Page</title>
+	<link href="jquery/jquery-ui.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+	<link href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" media="screen" rel="stylesheet" type="text/css"
+	/>
+	<!-- jQuery UI -->
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+	<script type="text/javascript">
+		toastr.options.closeButton = true;
+		toastr.options.positionClass = "toast-bottom-right";
+
+		function notification(type, message) {
+			if (type == 'success') {
+				toastr.success(message, '<i>Éxito</i>');
+			} else if (type == 'error') {
+				toastr.error(message, 'Error');
+			} else if (type == 'warning') {
+				toastr.warning(message, 'Peligro');
+			} else {
+				toastr.info(message, 'Información');
+			}
+		}
+	</script>
+
+</head>
+
+<body>
+	<div class="score">
+		<p id="score"></p>
+	</div>
+	<!-- ui-dialog -->
+	<div id="wd" title="Usuario">
+		<form action="">
+			<h4>Introduzca NOMBRE y APELLIDO</h4>
+			<input type="text" name="name" id="dg" class="text ui-widget-content ui-corner-all">
+			<button type="button" value="FACIL">FACIL</button>
+			<button type="button" value="MEDIO">MEDIO</button>
+			<button type="button" value="DIFICIL">EXPERTO</button>
+		</form>
+	</div>
+	<div id="islas"></div>
+
+	<div id="btn">
+		<button id="opener">¡Juego nuevo!</button>
+	</div>
+	<div id="endGame">
+		<p></p>
+	</div>
+
+	<script src="external/jquery/jquery.js"></script>
+	<script src="jquery/jquery-ui.js"></script>
+	<script src="js/game.js"></script>
+</body>
+
+</html>
